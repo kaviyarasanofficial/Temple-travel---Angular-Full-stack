@@ -1,0 +1,67 @@
+<app-navbar></app-navbar>
+<app-bannar></app-bannar>
+<div class="container">
+<div class="row ">
+<div class="card mb-5" *ngFor="let user of users" style="margin-right: 10px;">
+  <p class="heading">{{ user.first_name }}</p>
+  <p class="para">{{ user.email }}
+  <!-- </p><div class="overlay"></div> -->
+  <!-- <button class="card-btn">Click</button> -->
+</div>
+</div></div>
+<div class="container">
+  <div class="row">
+    <div class="col-4" *ngFor="let temple of temples">
+      <div class="card">
+        <div class="card-header">
+          {{ temple.temple_name }}
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">District: {{ temple.district }}</h5>
+          <p class="card-text">{{ temple.details }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<h1>Survey List</h1>
+  <ul>
+    <li *ngFor="let survey of surveys">
+      <p><strong>Survey Date and Time:</strong> {{ survey.surveyorname }}</p>
+      <p><strong>Heating Source:</strong> {{ survey.surveyoremail }}</p>
+      <p><strong>Survey Date and Time:</strong> {{ survey.surveyorphone }}</p>
+      <p><strong>Heating Source:</strong> {{ survey.password }}</p>
+      <p><strong>Survey Date and Time:</strong> {{ survey.Customercity }}</p>
+      <p><strong>Heating Source:</strong> {{ survey.Customerpostcode }}</p>
+      <!-- Add other survey properties you want to display -->
+    </li>
+  </ul>
+
+
+  <form #surveyForm="ngForm" (ngSubmit)="submitForm(surveyForm.value)">
+    <div class="form-group">
+      <label for="surveyDateTime">Survey Date and Time</label>
+      <input type="text" class="form-control" id="surveyDateTime" name="surveyDateTime" ngModel required>
+    </div>
+  
+    <div class="form-group">
+      <label for="heatingSource">Heating Source</label>
+      <input type="text" class="form-control" id="heatingSource" name="heatingSource" ngModel required>
+    </div>
+  
+    <div class="form-group">
+      <label for="isHeatingSourceOld">Is Heating Source Old?</label>
+      <input type="text" class="form-control" id="isHeatingSourceOld" name="isHeatingSourceOld" ngModel required>
+    </div>
+  
+    <!-- Add more form fields as needed -->
+  
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <div *ngIf="currentUser">
+    <p>Your name is: {{ currentUser.username }}</p>
+  </div>
+  
+<app-footer></app-footer>
+  
+ 

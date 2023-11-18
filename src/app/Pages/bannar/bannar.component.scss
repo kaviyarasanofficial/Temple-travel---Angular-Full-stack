@@ -1,0 +1,44 @@
+.scrolling-text-container {
+    overflow: hidden;
+    position: relative;
+    height: 40px; /* Adjust the height as needed */
+    text-align: right; /* Start text from the right side */
+  }
+  
+  .scrolling-text {
+    white-space: nowrap;
+    animation: scroll 20s linear infinite; /* Adjust the animation duration for slower speed */
+  }
+  
+  .scrolling-text span {
+    font-size: 20px; /* Starting font size */
+    font-weight: bold; /* Add font weight for bold effect */
+    color: #ff0000; /* Starting text color */
+    animation: changeSizeAndColor 20s ease-in-out infinite; /* Adjust duration and timing function */
+    animation-play-state: paused; /* Initially paused */
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  @keyframes changeSizeAndColor {
+    0% {
+      font-size: 20px; /* Starting font size */
+      color: #ff0000; /* Starting text color */
+    }
+    50% {
+      font-size: 30px; /* Bold font size */
+      color: #00ff00; /* Color change */
+    }
+    100% {
+      font-size: 20px; /* Back to starting font size */
+      color: #ff0000; /* Back to starting text color */
+    }
+  }
+  
